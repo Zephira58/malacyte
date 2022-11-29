@@ -20,6 +20,7 @@ impl EventHandler for Handler {
                 "ping" => commands::ping::run(&command.data.options),
                 "hello" => commands::hello::run(&command.data.options),
                 "id" => commands::id::run(&command.data.options),
+                "info" => commands::info::run(&command.data.options),
                 _ => "not implemented :(".to_string(),
             };
 
@@ -51,6 +52,7 @@ impl EventHandler for Handler {
                 .create_application_command(|command| commands::ping::register(command))
                 .create_application_command(|command| commands::hello::register(command))
                 .create_application_command(|command| commands::id::register(command))
+                .create_application_command(|command| commands::info::register(command))
         })
         .await;
 
