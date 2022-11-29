@@ -54,7 +54,10 @@ impl EventHandler for Handler {
         })
         .await;
 
-        println!("I now have the following guild slash commands: {:#?}", commands);
+        println!(
+            "I now have the following guild slash commands: {:#?}",
+            commands
+        );
     }
 }
 
